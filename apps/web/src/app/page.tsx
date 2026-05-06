@@ -53,10 +53,31 @@ export default function Dashboard() {
     setLoading(false)
   }
 
-  async function uploadDemoResumes() {
-    // In a real app, this would be a file upload.
-    // For demo purposes, we assume resumes are uploaded manually or via script.
-    alert("Please run 'python scripts/upload_demo.py' to simulate resume uploads, or use the FastAPI docs at localhost:8000/docs.")
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || e.target.files.length === 0) return;
+    setLoading(true);
+    
+    for (let i = 0; i < e.target.files.length; i++) {
+      const file = e.target.files[i];
+      const formData = new FormData();
+      formData.append("file", file);
+      // Format name from filename (e.g. "resume1.txt" -> "Resume1")
+      const formattedName = file.name.split('.')[0].charAt(0).toUpperCase() + file.name.split('.')[0].slice(1);
+      formData.append("candidate_name", formattedName);
+
+      try {
+        await fetch(`${API_BASE}/resumes/upload`, {
+          method: 'POST',
+          body: formData
+        });
+      } catch (err) {
+        console.error("Failed to upload", file.name);
+      }
+    }
+    
+    setLoading(false);
+    alert("Resumes uploaded successfully! Click 'Analyze Candidates' to view results.");
+    e.target.value = '';
   }
 
   async function runRanking() {
@@ -94,9 +115,10 @@ export default function Dashboard() {
           <button onClick={createDemoJob} className="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg flex items-center gap-2 text-sm font-medium">
             <Briefcase className="w-4 h-4" /> Create Demo Job
           </button>
-          <button onClick={uploadDemoResumes} className="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg flex items-center gap-2 text-sm font-medium">
+          <label className="px-4 py-2 bg-white/10 hover:bg-white/20 transition-colors rounded-lg flex items-center gap-2 text-sm font-medium cursor-pointer">
             <UploadCloud className="w-4 h-4" /> Upload Resumes
-          </button>
+            <input type="file" multiple accept=".txt,.pdf,.docx" className="hidden" onChange={handleFileUpload} disabled={loading} />
+          </label>
         </div>
       </header>
 
