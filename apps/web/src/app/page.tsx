@@ -30,23 +30,46 @@ export default function Dashboard() {
 
   async function createDemoJob() {
     setLoading(true)
-    const payload = {
-      title: "Data Analyst",
-      jd_text: "We are looking for a Data Analyst with 2+ years of experience. Must be proficient in SQL, Python, and Excel. Experience with Power BI or Tableau is a plus.",
-      must_have: ["sql", "python", "excel"],
-      nice_to_have: ["power bi", "tableau"],
-      min_exp_years: 2.0
-    }
+    const payloads = [
+      {
+        title: "Data Analyst",
+        jd_text: "We are looking for a Data Analyst with 2+ years of experience. Must be proficient in SQL, Python, and Excel. Experience with Power BI or Tableau is a plus.",
+        must_have: ["sql", "python", "excel"],
+        nice_to_have: ["power bi", "tableau"],
+        min_exp_years: 2.0
+      },
+      {
+        title: "Backend Python Developer",
+        jd_text: "Seeking a Python Developer with 3+ years of experience. Must have strong skills in Python and Django. Experience with Docker and SQL is required.",
+        must_have: ["python", "django", "docker", "sql"],
+        nice_to_have: ["react", "gcp"],
+        min_exp_years: 3.0
+      },
+      {
+        title: "Frontend React Developer",
+        jd_text: "Looking for a Frontend Developer proficient in React, JavaScript, HTML, and CSS. Next.js experience is a huge plus.",
+        must_have: ["react", "javascript", "html", "css"],
+        nice_to_have: ["next.js", "git"],
+        min_exp_years: 1.0
+      },
+      {
+        title: "DevOps Engineer",
+        jd_text: "We need a DevOps Engineer with AWS and Kubernetes experience. Must know Linux and Docker.",
+        must_have: ["aws", "kubernetes", "linux", "docker"],
+        nice_to_have: ["python", "git"],
+        min_exp_years: 4.0
+      }
+    ];
     
     try {
-      const res = await fetch(`${API_BASE}/jobs`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      })
-      if (res.ok) {
-        fetchJobs()
+      for (const payload of payloads) {
+        await fetch(`${API_BASE}/jobs`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
       }
+      fetchJobs();
     } catch (e) {
       console.error(e)
     }
