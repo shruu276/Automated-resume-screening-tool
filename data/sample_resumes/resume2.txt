@@ -1,0 +1,18 @@
+Alice Smith
+Email: alice.smith@email.com
+Location: New York
+
+Objective
+Backend developer with 4 years experience building scalable applications.
+
+Experience
+Software Engineer | CodeCorp | 2020 - Present
+- Developed REST APIs using Python and Django.
+- Containerized applications using Docker and deployed on GCP.
+- Mentored junior developers in React frontend basics.
+
+Education
+B.S. Computer Science | State University | 2016 - 2020
+
+Skills
+Python, Django, React, Docker, SQL, GCP

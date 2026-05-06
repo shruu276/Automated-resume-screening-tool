@@ -1,0 +1,19 @@
+John Doe
+Email: john.doe@email.com
+Phone: (555) 123-4567
+Location: Remote
+
+Objective
+Detail-oriented Data Analyst with 3 years of experience in data modeling, visualization, and SQL databases.
+
+Experience
+Data Analyst | Tech Solutions Inc. | 2021 - Present
+- Analyzed large datasets using SQL and Python to extract actionable insights.
+- Built interactive dashboards using Power BI and Excel, reducing reporting time by 40%.
+- Worked closely with stakeholders to define business requirements.
+
+Education
+B.Tech in Computer Science | University of Technology | 2017 - 2021
+
+Skills
+Python, SQL, Excel, Power BI, Pandas, NumPy, Data Analysis

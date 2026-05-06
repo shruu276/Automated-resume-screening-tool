@@ -1,0 +1,17 @@
+Bob Jones
+Email: bob.jones@email.com
+Location: Chicago
+
+Objective
+Enthusiastic recent graduate looking for a junior developer role.
+
+Experience
+Intern | WebMakers | 2023 - 2023
+- Built simple frontend components using HTML, CSS, and basic JavaScript.
+- Wrote unit tests for frontend code.
+
+Education
+B.Sc in IT | City College | 2019 - 2023
+
+Skills
+HTML, CSS, JavaScript, Git

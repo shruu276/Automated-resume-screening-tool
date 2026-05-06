@@ -1,0 +1,20 @@
+[
+  {
+    "id": "job_001",
+    "title": "Data Analyst",
+    "jd_text": "We are looking for a Data Analyst with 2+ years of experience. Must be proficient in SQL, Python, and Excel. Experience with Power BI or Tableau is a plus. Strong analytical skills and problem-solving abilities.",
+    "must_have": ["sql", "python", "excel"],
+    "nice_to_have": ["power bi", "tableau"],
+    "min_exp_years": 2.0,
+    "location": "Remote"
+  },
+  {
+    "id": "job_002",
+    "title": "Python Developer",
+    "jd_text": "Seeking a backend Python Developer with 3+ years of experience. Must have strong skills in Python, Django, or Flask. Knowledge of AWS and Docker is required. Good to have React or Next.js.",
+    "must_have": ["python", "django", "aws", "docker"],
+    "nice_to_have": ["flask", "react", "next.js"],
+    "min_exp_years": 3.0,
+    "location": "New York"
+  }
+]
